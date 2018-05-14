@@ -1,0 +1,38 @@
+[
+  {
+    "id": "adb076cc-37a0-4f6d-b0b8-5430e5a5384d",
+    "data": [
+      {
+        "text": "what\u0027s the status of invoice ",
+        "userDefined": false
+      },
+      {
+        "text": "@InvoiceNumber?",
+        "alias": "InvoiceNumber",
+        "meta": "@sys.any",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1526289580
+  },
+  {
+    "id": "eb69b0cf-4b19-4710-8730-20dc87b235c8",
+    "data": [
+      {
+        "text": "what  status does invoice ",
+        "userDefined": false
+      },
+      {
+        "text": "@InvoiceNumber have?",
+        "alias": "InvoiceNumber",
+        "meta": "@sys.any",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1526289580
+  }
+]

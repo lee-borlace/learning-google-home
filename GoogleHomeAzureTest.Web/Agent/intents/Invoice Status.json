@@ -1,0 +1,37 @@
+{
+  "id": "b415bbf1-2bb5-4320-8696-d0283625b8e6",
+  "name": "Invoice Status",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "affectedContexts": [],
+      "parameters": [
+        {
+          "id": "e96ae292-4585-4bf5-8316-8e5b96a963b3",
+          "required": false,
+          "dataType": "@sys.any",
+          "name": "InvoiceNumber",
+          "value": "$InvoiceNumber",
+          "isList": false
+        }
+      ],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": []
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": true,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1526289580,
+  "fallbackIntent": false,
+  "events": []
+}
