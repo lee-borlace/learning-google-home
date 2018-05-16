@@ -13,7 +13,7 @@ namespace DialogFlow.Fulfillment.Dotnet.Entities
     using Newtonsoft.Json;
     using Newtonsoft.Json.Converters;
 
-    public partial class Request
+    public partial class DialogFlowRequest
     {
         [JsonProperty("responseId")]
         public string ResponseId { get; set; }
@@ -86,25 +86,25 @@ namespace DialogFlow.Fulfillment.Dotnet.Entities
         public string DisplayName { get; set; }
     }
 
-    public partial class Request
-    {
-        public static Request FromJson(string json) => JsonConvert.DeserializeObject<Request>(json, DialogFlow.Fulfillment.Dotnet.Entities.RequestConverter.Settings);
-    }
+    //public partial class DialogFlowRequest
+    //{
+    //    public static DialogFlowRequest FromJson(string json) => JsonConvert.DeserializeObject<DialogFlowRequest>(json, DialogFlow.Fulfillment.Dotnet.Entities.DialogFlowRequestConverter.Settings);
+    //}
 
-    public static class RequestSerialize
-    {
-        public static string ToJson(this Request self) => JsonConvert.SerializeObject(self, DialogFlow.Fulfillment.Dotnet.Entities.RequestConverter.Settings);
-    }
+    //public static class DialogFlowRequestSerialize
+    //{
+    //    public static string ToJson(this DialogFlowRequest self) => JsonConvert.SerializeObject(self, DialogFlow.Fulfillment.Dotnet.Entities.DialogFlowRequestConverter.Settings);
+    //}
 
-    internal static class RequestConverter
-    {
-        public static readonly JsonSerializerSettings Settings = new JsonSerializerSettings
-        {
-            MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-            DateParseHandling = DateParseHandling.None,
-            Converters = {
-                new IsoDateTimeConverter { DateTimeStyles = DateTimeStyles.AssumeUniversal }
-            },
-        };
-    }
+    //internal static class DialogFlowRequestConverter
+    //{
+    //    public static readonly JsonSerializerSettings Settings = new JsonSerializerSettings
+    //    {
+    //        MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
+    //        DateParseHandling = DateParseHandling.None,
+    //        Converters = {
+    //            new IsoDateTimeConverter { DateTimeStyles = DateTimeStyles.AssumeUniversal }
+    //        },
+    //    };
+    //}
 }

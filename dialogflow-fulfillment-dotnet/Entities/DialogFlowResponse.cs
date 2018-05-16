@@ -13,7 +13,7 @@ namespace DialogFlow.Fulfillment.Dotnet.Entities
     using Newtonsoft.Json;
     using Newtonsoft.Json.Converters;
 
-    public partial class Response
+    public partial class DialogFlowResponse
     {
         [JsonProperty("fulfillmentText")]
         public string FulfillmentText { get; set; }
@@ -32,6 +32,19 @@ namespace DialogFlow.Fulfillment.Dotnet.Entities
 
         [JsonProperty("followupEventInput")]
         public FollowupEventInput FollowupEventInput { get; set; }
+
+        /// <summary>
+        /// Gets a response that contains basic fulfilment text.
+        /// </summary>
+        /// <param name="fulfillmentText"></param>
+        /// <returns></returns>
+        public static DialogFlowResponse GetFulfillmentTextResponse(string fulfillmentText)
+        {
+            return new DialogFlowResponse()
+            {
+                FulfillmentText = fulfillmentText
+            };
+        }
     }
 
     public partial class FollowupEventInput
@@ -121,25 +134,25 @@ namespace DialogFlow.Fulfillment.Dotnet.Entities
         public string TextToSpeech { get; set; }
     }
 
-    public partial class Response
-    {
-        public static Response FromJson(string json) => JsonConvert.DeserializeObject<Response>(json, DialogFlow.Fulfillment.Dotnet.Entities.ResponseConverter.Settings);
-    }
+    //public partial class DialogFlowResponse
+    //{
+    //    public static DialogFlowResponse FromJson(string json) => JsonConvert.DeserializeObject<DialogFlowResponse>(json, DialogFlow.Fulfillment.Dotnet.Entities.DialogFlowResponseConverter.Settings);
+    //}
 
-    public static class ResponseSerialize
-    {
-        public static string ToJson(this Response self) => JsonConvert.SerializeObject(self, DialogFlow.Fulfillment.Dotnet.Entities.ResponseConverter.Settings);
-    }
+    //public static class DialogFlowResponseSerialize
+    //{
+    //    public static string ToJson(this DialogFlowResponse self) => JsonConvert.SerializeObject(self, DialogFlow.Fulfillment.Dotnet.Entities.DialogFlowResponseConverter.Settings);
+    //}
 
-    internal static class ResponseConverter
-    {
-        public static readonly JsonSerializerSettings Settings = new JsonSerializerSettings
-        {
-            MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-            DateParseHandling = DateParseHandling.None,
-            Converters = {
-                new IsoDateTimeConverter { DateTimeStyles = DateTimeStyles.AssumeUniversal }
-            },
-        };
-    }
+    //internal static class DialogFlowResponseConverter
+    //{
+    //    public static readonly JsonSerializerSettings Settings = new JsonSerializerSettings
+    //    {
+    //        MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
+    //        DateParseHandling = DateParseHandling.None,
+    //        Converters = {
+    //            new IsoDateTimeConverter { DateTimeStyles = DateTimeStyles.AssumeUniversal }
+    //        },
+    //    };
+    //}
 }
