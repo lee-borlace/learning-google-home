@@ -13,12 +13,9 @@ namespace GoogleHomeAzureTest.Web.Controllers
     public class RequestController : Controller
     {
         [HttpPost]
-        public async Task<IActionResult> Post([FromBody]DialogFlowRequest request)
+        public async Task<JsonResult> Post([FromBody]DialogFlowRequest request)
         {
-            // Request.HttpContext.Response.Headers["Content-type"] = "application/json; charset=utf-8";
-            // Request.HttpContext.Response.Headers.Add("Content-type", "application/json; charset=utf-8");
-
-            return Ok( DialogFlowResponse.GetFulfillmentTextResponse("The status is CLOSED!"));
+            return new JsonResult(DialogFlowResponse.GetFulfillmentTextResponse("The status is CLOSED!"));
         }
     }
 }
